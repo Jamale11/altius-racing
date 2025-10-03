@@ -18,21 +18,25 @@ canvas {
 }
 .controls {
   position: absolute;
-  bottom: 10px;
-  display: flex;
-  justify-content: center;
+  bottom: 20px;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  pointer-events: none; /* biar area kosongnya gak ganggu tap */
 }
-button {
+
+.controls button {
   padding: 20px 30px;
-  margin: 10px;
-  font-size: 22px;
+  font-size: 28px;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   background: #ff4444;
   color: white;
+  pointer-events: all; /* aktifin tombolnya */
 }
-button:active {
+
+.controls button:active {
   background: #ff8888;
 }
 .overlay {
