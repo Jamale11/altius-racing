@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AltiusLab Racing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- Kontrol untuk HP -->
+  <div class="controls">
+    <button onclick="moveUp()">⬆️</button>
+    <button onclick="moveDown()">⬇️</button>
+  </div>
+
+  <!-- Overlay Game Over -->
+  <div class="overlay" id="gameOverScreen">
+    <h1 id="resultText">Game Over</h1>
+    <p id="reasonText"></p>
+    <button onclick="restartGame()">Restart</button>
+  </div>
+
+  <!-- Popup Narasi -->
+  <div id="popupMessage"></div>
+
+  <script src="game.js"></script>
+</body>
+</html>
