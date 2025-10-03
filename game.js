@@ -1,3 +1,16 @@
+// === Gambar mobil & item ===
+const playerImg = new Image();
+playerImg.src = "player.png"; // mobil hijau
+
+const enemyImg = new Image();
+enemyImg.src = "enemy.png"; // mobil merah
+
+const boosterImg = new Image();
+boosterImg.src = "booster.png"; // ikon booster
+
+const obstacleImg = new Image();
+obstacleImg.src = "obstacle.png"; // rintangan
+
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -97,18 +110,23 @@ function update() {
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "red";
-  ctx.fillRect(player.x, player.y, player.width, player.height);
+  // player
+  ctx.drawImage(playerImg, player.x, player.y, player.width, player.height);
 
-  ctx.fillStyle = "blue";
-  ctx.fillRect(enemy.x, enemy.y, enemy.width, enemy.height);
+  // enemy
+  ctx.drawImage(enemyImg, enemy.x, enemy.y, enemy.width, enemy.height);
 
-  ctx.fillStyle = "orange";
-  obstacles.forEach(o => ctx.fillRect(o.x, o.y, o.width, o.height));
+  // obstacle
+  obstacles.forEach(o => {
+    ctx.drawImage(obstacleImg, o.x, o.y, o.width, o.height);
+  });
 
-  ctx.fillStyle = "green";
-  boosters.forEach(b => ctx.fillRect(b.x, b.y, b.width, b.height));
+  // booster
+  boosters.forEach(b => {
+    ctx.drawImage(boosterImg, b.x, b.y, b.width, b.height);
+  });
 
+  // score
   ctx.fillStyle = "white";
   ctx.font = "22px Arial";
   ctx.fillText("Score: " + score, 20, 30);
